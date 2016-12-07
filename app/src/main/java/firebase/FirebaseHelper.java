@@ -196,7 +196,7 @@ public class FirebaseHelper {
 					context.startActivity(chooser);
 				}
 			}
-			
+
 			@Override
 			public void onCancelled(DatabaseError databaseError) {
 
