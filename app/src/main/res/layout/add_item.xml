@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:fitsSystemWindows="true"
+	tools:context="tomsdevelopment.mandatoryexercises_shoppinglistapp.MainActivity">
+
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_marginTop="15dp">
+
+		<RelativeLayout
+			android:id="@+id/itemNameLayout"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content">
+
+			<TextView
+				android:text="Item Name"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/nameTitle"
+				android:layout_centerHorizontal="true"/>
+
+			<EditText
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:inputType="textPersonName"
+				android:ems="10"
+				android:id="@+id/txtName"
+				android:layout_below="@id/nameTitle"
+				android:background="@drawable/text_field_border"
+				android:layout_centerHorizontal="true"
+				android:padding="15dp"
+				android:text="Name"
+				android:layout_marginTop="5dp"/>
+
+		</RelativeLayout>
+
+		<RelativeLayout
+			android:id="@+id/itemAmountLayout"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/itemNameLayout"
+			android:layout_marginTop="30dp">
+
+			<TextView
+				android:text="Item Amount"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/amountTitle"
+				android:layout_centerHorizontal="true"/>
+
+			<EditText
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="1"
+				android:ems="10"
+				android:id="@+id/txtAmount"
+				android:layout_below="@id/amountTitle"
+				android:inputType="numberSigned"
+				android:background="@drawable/text_field_border"
+				android:layout_centerHorizontal="true"
+				android:padding="15dp"
+				android:layout_marginTop="5dp"/>
+
+		</RelativeLayout>
+
+		<RelativeLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/itemAmountLayout"
+			android:layout_marginTop="30dp"
+			android:paddingLeft="15dp"
+			android:paddingRight="15dp">
+
+			<Button
+				android:text="Cancel"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/btnCancel"
+				android:layout_alignParentLeft="true"
+				android:layout_toLeftOf="@+id/centerPoint"/>
+
+			<TextView
+				android:id="@+id/centerPoint"
+				android:text=""
+				android:layout_width="0dip"
+				android:layout_height="wrap_content"
+				android:layout_centerHorizontal="true"/>
+
+			<Button
+				android:text="Add"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/btnAdd"
+				android:layout_alignParentRight="true"
+				android:layout_toRightOf="@+id/centerPoint"/>
+
+		</RelativeLayout>
+
+	</RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

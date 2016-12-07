@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:fitsSystemWindows="true"
+	tools:context="tomsdevelopment.mandatoryexercises_shoppinglistapp.MainActivity">
+
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<TextView
+			android:text="Sort Shopping List Items by:"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentTop="true"
+			android:layout_centerHorizontal="true"
+			android:layout_marginTop="55dp"
+			android:id="@+id/textView"/>
+
+		<RadioGroup
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="16dp"
+			android:layout_below="@+id/textView"
+			android:layout_centerHorizontal="true"
+			android:id="@+id/rbtnGrpSortBy">
+
+			<RadioButton
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="13dp"
+				android:id="@+id/rbtnSortByAmount"
+				android:text="Amount"
+				android:layout_below="@+id/rbtnSortByName"
+				android:layout_alignStart="@+id/rbtnSortByName"
+				android:layout_weight="1"/>
+
+			<RadioButton
+				android:text="Name"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentTop="true"
+				android:layout_centerHorizontal="true"
+				android:layout_marginTop="15dp"
+				android:id="@+id/rbtnSortByName"
+				android:layout_weight="1"/>
+		</RadioGroup>
+
+	</RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>
