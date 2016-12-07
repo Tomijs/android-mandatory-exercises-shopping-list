@@ -170,7 +170,7 @@ public class FirebaseHelper {
 		return allItemsRemoved;
 	}
 
-	public void shareShoppingListItems(final Context context) {
+	public void shareShoppingListItems(final Context context, final String sortBy) {
 		databaseRef.addListenerForSingleValueEvent(new ValueEventListener() {
 			@Override
 			public void onDataChange(DataSnapshot dataSnapshot) {
@@ -180,14 +180,12 @@ public class FirebaseHelper {
 
 				String shoppingListText = "My Shopping List:";
 
-				fetchData(dataSnapshot, "name");
-
 				for (DataSnapshot ds : dataSnapshot.getChildren()) {
-					for (DataSnapshot dsChildren : ds.getChildren()) {
-						Item item = dsChildren.getValue(Item.class);
+					fetchData(ds, sortBy);
+				}
 
-						shoppingListText += System.lineSeparator() + item;
-					}
+				for (Item item : items) {
+					shoppingListText += System.lineSeparator() + item;
 				}
 
 				intent.putExtra(Intent.EXTRA_TEXT, shoppingListText);
@@ -198,7 +196,7 @@ public class FirebaseHelper {
 					context.startActivity(chooser);
 				}
 			}
-
+			
 			@Override
 			public void onCancelled(DatabaseError databaseError) {
 

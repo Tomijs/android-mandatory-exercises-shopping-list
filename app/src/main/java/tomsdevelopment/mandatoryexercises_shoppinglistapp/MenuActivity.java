@@ -2,6 +2,7 @@ package tomsdevelopment.mandatoryexercises_shoppinglistapp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -14,6 +15,7 @@ import firebase.FirebaseHelper;
 
 public class MenuActivity extends AppCompatActivity {
 	Context context;
+	SharedPreferences preferences;
 
 	DatabaseReference databaseRef;
 	FirebaseHelper firebaseHelper;
@@ -23,6 +25,7 @@ public class MenuActivity extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 
 		context = this;
+		preferences = getSharedPreferences("tomsdevelopment.shoppinglist", MODE_PRIVATE);
 
 		databaseRef = FirebaseDatabase.getInstance().getReference();
 		firebaseHelper = new FirebaseHelper(databaseRef);
@@ -49,7 +52,7 @@ public class MenuActivity extends AppCompatActivity {
 
 				break;
 			case R.id.action_share:
-				firebaseHelper.shareShoppingListItems(context);
+				firebaseHelper.shareShoppingListItems(context, preferences.getString("sortBy", "amount"));
 
 				break;
 			default:
