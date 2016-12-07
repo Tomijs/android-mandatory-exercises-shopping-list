@@ -18,16 +18,32 @@
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:layout_marginRight="15dp"
-			android:layout_marginTop="15dp"
+			android:layout_marginTop="5dp"
 			android:layout_marginLeft="15dp">
 
-			<Button
-				android:id="@+id/btnDeleteAllitems"
-				android:text="Delete All Items"
+			<RelativeLayout
 				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_centerVertical="true"
-				android:layout_alignParentStart="true"/>
+				android:layout_height="wrap_content">
+
+				<Button
+					android:id="@+id/btnDeleteAllitems"
+					android:text="Delete All Items"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_centerVertical="true"
+					android:layout_alignParentStart="true"/>
+
+				<TextView
+					android:text="Click on Item to delete"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_below="@id/btnDeleteAllitems"
+					android:id="@+id/textView2"
+					android:layout_marginTop="10dp"
+					android:layout_centerHorizontal="true"
+					android:textAlignment="center"/>
+
+			</RelativeLayout>
 
 			<TextView
 				android:id="@+id/itemCountNo"
